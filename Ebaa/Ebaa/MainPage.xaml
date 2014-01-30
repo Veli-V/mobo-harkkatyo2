@@ -1,0 +1,76 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Ebaa.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768" 
+    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+    
+    <!-- Kopioitu datatemplate-->
+    <phone:PhoneApplicationPage.Resources>
+    <DataTemplate x:Key="DataTemplate1">
+        <Button Width="460" Height="160">
+            <Button.Content>
+                    <StackPanel Orientation="Horizontal" Height="155" Width="455">
+                        <Image Source="{Binding galleryURL[0]}" Width="100" />
+                        <StackPanel Orientation="Vertical" Height="155">
+                            <TextBlock Text="{Binding title[0]}" Width="360" Height="150" TextWrapping="Wrap" d:LayoutOverrides="Height" Foreground="WhiteSmoke"/>
+                            <TextBlock Text="{Binding sellingStatus[0].currentPrice[0]}" />
+                        </StackPanel>
+                    </StackPanel>
+                </Button.Content>
+        </Button>
+    </DataTemplate>
+    </phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot Title="MY APPLICATION">
+            <!--Pivot item one-->
+            <controls:PivotItem Header="Search">
+            	<Grid Margin="0,0,5,17" ShowGridLines="True">
+            		<Grid.RowDefinitions>
+            			<RowDefinition Height="35"/>
+            			<RowDefinition Height="0.133*"/>
+            			<RowDefinition Height="0.133*"/>
+            			<RowDefinition Height="0.133*"/>
+            			<RowDefinition Height="0.133*"/>
+            			<RowDefinition Height="0.133*"/>
+            			<RowDefinition Height="0.133*"/>
+            		</Grid.RowDefinitions>
+            		<Grid.ColumnDefinitions>
+            			<ColumnDefinition/>
+            			<ColumnDefinition/>
+            			<ColumnDefinition/>
+            		</Grid.ColumnDefinitions>
+            		<Grid.Background>
+            			<SolidColorBrush Color="#FF1F1F1F"/>
+            		</Grid.Background>
+            		<TextBox Margin="8,0" TextWrapping="Wrap" Text="TextBox" Grid.ColumnSpan="3" Grid.Row="1"/>
+            		<TextBlock TextWrapping="Wrap" RenderTransformOrigin="0.455,-0.852" VerticalAlignment="Bottom" HorizontalAlignment="Left"><Run Text="Hakusana"/><Run Text=":"/></TextBlock>
+            		<TextBlock Margin="8,8,8,31" Grid.Row="2" TextWrapping="Wrap" Text="Kauppa" d:LayoutOverrides="VerticalAlignment"/>
+            		<Button x:Name="btnSearch" Content="Search" Grid.Column="2" Margin="13,23,8,8" Grid.Row="6" Click="btnSearchClicked"/>
+            		<TextBlock x:Name="txtblockTulos" Margin="8,0,8,31" Grid.Row="4" TextWrapping="Wrap" Text="TextBlock" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+            	</Grid>
+                <!--Double line list with text wrapping-->
+            </controls:PivotItem>
+ 
+            <!--Pivot item two-->
+            <controls:PivotItem Header="Result">
+                <ListBox Name="lboxResult" Margin="0,0,0,0" ItemTemplate="{StaticResource DataTemplate1}"/>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+    
+
+</phone:PhoneApplicationPage>
