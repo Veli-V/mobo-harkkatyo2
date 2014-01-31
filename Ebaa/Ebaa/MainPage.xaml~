@@ -18,8 +18,10 @@
     <!-- Kopioitu datatemplate-->
     <phone:PhoneApplicationPage.Resources>
     <DataTemplate x:Key="DataTemplate1">
-            <Button Width="460" Height="160" Click="Button_Click" >
+        <Button Width="460" Height="160" Click="Button_Click" >
             <Button.Content>
+                    
+
                     <StackPanel Orientation="Horizontal" Height="155" Width="455" Background="Pink">
                         <Image Source="{Binding galleryURL[0]}" Width="100" />
                         <StackPanel Orientation="Vertical" Height="155" Background="Green" Width="355">
