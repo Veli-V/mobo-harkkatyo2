@@ -18,13 +18,18 @@
     <!-- Kopioitu datatemplate-->
     <phone:PhoneApplicationPage.Resources>
     <DataTemplate x:Key="DataTemplate1">
-        <Button Width="460" Height="160">
+        <Button Width="460" Height="160" Click="Button_Click" >
             <Button.Content>
-                    <StackPanel Orientation="Horizontal" Height="155" Width="455">
+                    
+
+                    <StackPanel Orientation="Horizontal" Height="155" Width="455" Background="Pink">
                         <Image Source="{Binding galleryURL[0]}" Width="100" />
-                        <StackPanel Orientation="Vertical" Height="155">
-                            <TextBlock Text="{Binding title[0]}" Width="360" Height="150" TextWrapping="Wrap" d:LayoutOverrides="Height" Foreground="WhiteSmoke"/>
-                            <TextBlock Text="{Binding sellingStatus[0].currentPrice[0]}" />
+                        <StackPanel Orientation="Vertical" Height="155" Background="Green" Width="355">
+                            <TextBlock Text="{Binding title[0]}" Width="350" Height="70" TextWrapping="Wrap" d:LayoutOverrides="Height" Foreground="WhiteSmoke"/>
+                            <StackPanel Orientation="Horizontal" Height="40" Width="350" Background="DarkKhaki">
+                                <TextBlock Text="{Binding sellingStatus[0].currentPrice[0].__value__}" Height="40" Width="70" />
+                                <TextBlock Text="{Binding sellingStatus[0].currentPrice[0].currencyId}" Height="40" />
+                            </StackPanel>
                         </StackPanel>
                     </StackPanel>
                 </Button.Content>
@@ -41,12 +46,12 @@
             	<Grid Margin="0,0,5,17" ShowGridLines="True">
             		<Grid.RowDefinitions>
             			<RowDefinition Height="35"/>
-            			<RowDefinition Height="0.133*"/>
-            			<RowDefinition Height="0.133*"/>
-            			<RowDefinition Height="0.133*"/>
-            			<RowDefinition Height="0.133*"/>
-            			<RowDefinition Height="0.133*"/>
-            			<RowDefinition Height="0.133*"/>
+            			<RowDefinition Height="0.168*"/>
+            			<RowDefinition Height="0.166*"/>
+            			<RowDefinition Height="0.218*"/>
+            			<RowDefinition Height="0.181*"/>
+            			<RowDefinition Height="0.102*"/>
+            			<RowDefinition Height="0.166*"/>
             		</Grid.RowDefinitions>
             		<Grid.ColumnDefinitions>
             			<ColumnDefinition/>
@@ -56,11 +61,17 @@
             		<Grid.Background>
             			<SolidColorBrush Color="#FF1F1F1F"/>
             		</Grid.Background>
-            		<TextBox Margin="8,0" TextWrapping="Wrap" Text="TextBox" Grid.ColumnSpan="3" Grid.Row="1"/>
-            		<TextBlock TextWrapping="Wrap" RenderTransformOrigin="0.455,-0.852" VerticalAlignment="Bottom" HorizontalAlignment="Left"><Run Text="Hakusana"/><Run Text=":"/></TextBlock>
-            		<TextBlock Margin="8,8,8,31" Grid.Row="2" TextWrapping="Wrap" Text="Kauppa" d:LayoutOverrides="VerticalAlignment"/>
-            		<Button x:Name="btnSearch" Content="Search" Grid.Column="2" Margin="13,23,8,8" Grid.Row="6" Click="btnSearchClicked"/>
-            		<TextBlock x:Name="txtblockTulos" Margin="8,0,8,31" Grid.Row="4" TextWrapping="Wrap" Text="TextBlock" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+            		<TextBox x:Name="txtBoxQuery" Margin="8,0" TextWrapping="Wrap" Text="Dark Elf" Grid.ColumnSpan="3" Grid.Row="1"/>
+            		<TextBlock TextWrapping="Wrap" RenderTransformOrigin="0.455,-0.852" HorizontalAlignment="Left" Margin="0,8,0,0" d:LayoutOverrides="Height" Text="Query:"/>
+            		<TextBlock Margin="8,8,8,31" Grid.Row="2" TextWrapping="Wrap" d:LayoutOverrides="VerticalAlignment"><Run Text="Store"/><LineBreak/><Run/></TextBlock>
+            		<Button x:Name="btnSearch" Content="Search" Grid.Column="2" Grid.Row="6" Click="btnSearchClicked"/>
+            		<TextBlock Height="37" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Min. pri"/><Run Text="ce"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+            		<TextBlock Grid.Column="1" Height="37" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Max. price"/><LineBreak/><Run/></TextBlock>
+            		<TextBox x:Name="txtBoxMinPrice" Margin="0,41,0,0" Grid.Row="3" TextWrapping="Wrap" Text="0" InputScope="Number"/>
+            		<TextBox x:Name="txtBoxMaxPrice" Grid.Column="1" Margin="0,41,0,0" Grid.Row="3" TextWrapping="Wrap" Text="25" InputScope="Number"/>
+            		<TextBlock Grid.Column="2" Height="37" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Results"/><LineBreak/><Run/></TextBlock>
+            		<TextBox x:Name="txtBoxResults" Grid.Column="2" Margin="0,41,0,0" Grid.Row="3" TextWrapping="Wrap" Text="10" InputScope="Number"/>
+            		<TextBlock Height="39" Margin="0,8,8,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Sort by:"/><LineBreak/><Run/></TextBlock>
             	</Grid>
                 <!--Double line list with text wrapping-->
             </controls:PivotItem>

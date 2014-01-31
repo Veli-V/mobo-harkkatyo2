@@ -40,3 +40,47 @@ c:\users\e3jvaisa\documents\visual studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\zh-C
 c:\users\e3jvaisa\documents\visual studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\zh-TW\Microsoft.Advertising.Mobile.resources.dll
 c:\users\e3jvaisa\documents\visual studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\Newtonsoft.Json.dll
 c:\users\e3jvaisa\documents\visual studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\Newtonsoft.Json.xml
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\obj\Debug\Ebaa.csprojResolveAssemblyReference.cache
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\ApplicationIcon.png
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Background.png
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Ebaa.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Ebaa.pdb
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\AppManifest.xaml
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Ebaa.xap
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Microsoft.Advertising.Mobile.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Microsoft.Expression.Controls.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Microsoft.Expression.Drawing.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Microsoft.Phone.Controls.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Newtonsoft.Json.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Microsoft.Expression.Controls.xml
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Microsoft.Expression.Drawing.xml
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Microsoft.Phone.Controls.xml
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Newtonsoft.Json.xml
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\cs-CZ\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\da-DK\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\de-DE\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\el-GR\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\en-GB\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\es-ES\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\fi-FI\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\fr-FR\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\hu-HU\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\it-IT\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\ja-JP\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\ko-KR\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\nb-NO\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\nl-NL\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\pl-PL\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\pt-BR\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\pt-PT\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\ru-RU\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\sv-SE\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\zh-CN\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\zh-TW\Microsoft.Advertising.Mobile.resources.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\obj\Debug\Ebaa.csprojResolveAssemblyReference.cache
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\obj\Debug\App.g.i.cs
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\obj\Debug\MainPage.g.i.cs
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\obj\Debug\Ebaa.g.resources
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\obj\Debug\Ebaa.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\obj\Debug\Ebaa.pdb
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\obj\Debug\XapCacheFile.xml
