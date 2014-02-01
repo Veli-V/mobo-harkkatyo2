@@ -24,6 +24,12 @@ namespace Ebaa
         {
             InitializeComponent();
 
+            List<String> stores = new List<string>();
+            stores.Add("US");
+            stores.Add("UK");
+            stores.Add("DE");
+            listPickerStore.ItemsSource = stores;
+
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
@@ -105,8 +111,11 @@ namespace Ebaa
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Button tmpButton = (Button)sender;
+            string url = tmpButton.CommandParameter.ToString();
+            //MessageBox.Show(url);
             WebBrowserTask webBrowserTask = new WebBrowserTask();
-            webBrowserTask.Uri = new Uri("http://www.google.com", UriKind.Absolute);
+            webBrowserTask.Uri = new Uri(url, UriKind.Absolute);
             webBrowserTask.Show();
         }
     }

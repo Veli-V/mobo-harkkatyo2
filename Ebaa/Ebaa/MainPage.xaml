@@ -1,5 +1,4 @@
-﻿<phone:PhoneApplicationPage 
-    x:Class="Ebaa.MainPage"
+﻿<phone:PhoneApplicationPage
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -7,19 +6,19 @@
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" 
+    x:Class="Ebaa.MainPage" 
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768" 
     d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
-    FontFamily="{StaticResource PhoneFontFamilyNormal}"
-    FontSize="{StaticResource PhoneFontSizeNormal}"
-    Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
+    
+    
     
     <!-- Kopioitu datatemplate-->
     <phone:PhoneApplicationPage.Resources>
     <DataTemplate x:Key="DataTemplate1">
-            <Button Width="460" Height="160" Click="Button_Click" >
-            <Button.Content>
+            <Button Width="460" Height="160" Click="Button_Click" CommandParameter="{Binding viewItemURL[0]}" >
                     <StackPanel Orientation="Horizontal" Height="155" Width="455" Background="Pink">
                         <Image Source="{Binding galleryURL[0]}" Width="100" />
                         <StackPanel Orientation="Vertical" Height="155" Background="Green" Width="355">
@@ -30,10 +29,19 @@
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>
-                </Button.Content>
         </Button>
     </DataTemplate>
     </phone:PhoneApplicationPage.Resources>
+
+	<phone:PhoneApplicationPage.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</phone:PhoneApplicationPage.FontFamily>
+	<phone:PhoneApplicationPage.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
+	</phone:PhoneApplicationPage.FontSize>
+	<phone:PhoneApplicationPage.Foreground>
+		<StaticResource ResourceKey="PhoneForegroundBrush"/>
+	</phone:PhoneApplicationPage.Foreground>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -41,7 +49,7 @@
         <controls:Pivot Title="MY APPLICATION">
             <!--Pivot item one-->
             <controls:PivotItem Header="Search">
-            	<Grid Margin="0,0,5,17" ShowGridLines="True">
+            	<Grid Margin="0,0,5,17" ShowGridLines="True" Background="#FF1F1F1F">
             		<Grid.RowDefinitions>
             			<RowDefinition Height="35"/>
             			<RowDefinition Height="0.168*"/>
@@ -56,27 +64,24 @@
             			<ColumnDefinition/>
             			<ColumnDefinition/>
             		</Grid.ColumnDefinitions>
-            		<Grid.Background>
-            			<SolidColorBrush Color="#FF1F1F1F"/>
-            		</Grid.Background>
-            		<TextBox x:Name="txtBoxQuery" Margin="8,0" TextWrapping="Wrap" Text="Dark Elf" Grid.ColumnSpan="3" Grid.Row="1"/>
+            		<TextBox x:Name="txtBoxQuery" Margin="8,0,19,0" TextWrapping="Wrap" Text="Dark Elf" Grid.ColumnSpan="3" Grid.Row="1"/>
             		<TextBlock TextWrapping="Wrap" RenderTransformOrigin="0.455,-0.852" HorizontalAlignment="Left" Margin="0,8,0,0" d:LayoutOverrides="Height" Text="Query:"/>
-            		<TextBlock Margin="8,8,8,31" Grid.Row="2" TextWrapping="Wrap" d:LayoutOverrides="VerticalAlignment"><Run Text="Store"/><LineBreak/><Run/></TextBlock>
             		<Button x:Name="btnSearch" Content="Search" Grid.Column="2" Grid.Row="6" Click="btnSearchClicked"/>
             		<TextBlock Height="37" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Min. pri"/><Run Text="ce"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
             		<TextBlock Grid.Column="1" Height="37" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Max. price"/><LineBreak/><Run/></TextBlock>
-            		<TextBox x:Name="txtBoxMinPrice" Margin="0,41,0,0" Grid.Row="3" TextWrapping="Wrap" Text="0" InputScope="Number"/>
+            		<TextBox x:Name="txtBoxMinPrice" Margin="8,41,0,0" Grid.Row="3" TextWrapping="Wrap" Text="0" InputScope="Number"/>
             		<TextBox x:Name="txtBoxMaxPrice" Grid.Column="1" Margin="0,41,0,0" Grid.Row="3" TextWrapping="Wrap" Text="25" InputScope="Number"/>
             		<TextBlock Grid.Column="2" Height="37" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Results"/><LineBreak/><Run/></TextBlock>
-            		<TextBox x:Name="txtBoxResults" Grid.Column="2" Margin="0,41,0,0" Grid.Row="3" TextWrapping="Wrap" Text="10" InputScope="Number"/>
-            		<TextBlock Height="39" Margin="0,8,8,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Sort by:"/><LineBreak/><Run/></TextBlock>
+            		<TextBox x:Name="txtBoxResults" Grid.Column="2" Margin="0,41,19,0" Grid.Row="3" TextWrapping="Wrap" Text="10" InputScope="Number"/>
+            		<toolkit:ListPicker x:Name="listPickerStore" Margin="20,8,31,4" Grid.Row="2" Grid.ColumnSpan="3" Header="Stores" ItemCountThreshold="21"/>
+            		<toolkit:ListPicker x:Name="listPIckerSort" Grid.ColumnSpan="3" Margin="20,8,31,8" Grid.Row="4" Header="Sort by:"/>
             	</Grid>
                 <!--Double line list with text wrapping-->
             </controls:PivotItem>
  
             <!--Pivot item two-->
             <controls:PivotItem Header="Result">
-                <ListBox Name="lboxResult" Margin="0,0,0,0" ItemTemplate="{StaticResource DataTemplate1}"/>
+                <ListBox x:Name="lboxResult" Margin="0,0,0,0" ItemTemplate="{StaticResource DataTemplate1}"/>
             </controls:PivotItem>
         </controls:Pivot>
     </Grid>

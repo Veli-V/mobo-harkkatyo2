@@ -84,3 +84,6 @@ E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\obj\Debug\Ebaa.g.resources
 E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\obj\Debug\Ebaa.dll
 E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\obj\Debug\Ebaa.pdb
 E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\obj\Debug\XapCacheFile.xml
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Microsoft.Phone.Controls.Toolkit.pdb
+E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Microsoft.Phone.Controls.Toolkit.xml
