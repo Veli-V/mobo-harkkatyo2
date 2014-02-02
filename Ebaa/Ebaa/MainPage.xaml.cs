@@ -106,7 +106,6 @@ namespace Ebaa
                     }
                 }
             }
-            //lboxResult.ItemsSource = itemList;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -118,6 +117,55 @@ namespace Ebaa
             webBrowserTask.Uri = new Uri(url, UriKind.Absolute);
             webBrowserTask.Show();
         }
+
+        // Haetaan uuteen pivot itemiin tuloslista
+        private List<Item> getResultList()
+        {
+
+            string urlString = "http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsAdvanced&SERVICE-VERSION=1.0.0&GLOBAL-ID=EBAY-GB&SECURITY-APPNAME=JanneVis-5492-4df9-8755-33362e9698f1&keywords=Dark+elf&paginationInput.entriesPerPage=10&sortOrder=StartTimeNewest&itemFilter(0).name=ListingType&itemFilter(0).value=FixedPrice&itemFilter(1).name=MinPrice&itemFilter(1).value=0.00&itemFilter(2).name=MaxPrice&itemFilter(2).value=25.00&affiliate.networkId=9&affiliate.trackingId=1234567890&affiliate.customId=456&RESPONSE-DATA-FORMAT=XML";
+            Uri url = new Uri(urlString);
+
+            List<Item> tmpList = new List<Item>();
+            WebClient webClient = new WebClient();
+
+            webClient.DownloadStringAsync(url);
+            webClient.DownloadStringCompleted +=new DownloadStringCompletedEventHandler(webClient_DownloadStringCompleted_2);
+            return tmpList;
+        }
+
+        void webClient_DownloadStringCompleted_2(object sender, DownloadStringCompletedEventArgs e)
+        {
+            
+
+            // Siivotaan json vastauksesta @ merkit pois. Ebayn api on nimettyn jotkin
+            // muuttujat siten että alkavat @-merkillä. Tämä ei kuitankaan oikein
+            // toimi tämän ohjelman kannalta, joten siivotaan ne pois. Tämän
+            // jälkeen parsiminen onnnistuu.
+            string pattern = "@";
+            Regex rgx = new Regex(pattern);
+            string tmp = rgx.Replace(e.Result.ToString(), "");
+
+            // parsitaan JSON RootObjecteiksi
+            //RootObject dataa = (RootObject)JsonConvert.DeserializeObject<RootObject>(tmp);
+
+
+        }
+
+        private void addPivotItem(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+            PivotItem pivotti = new PivotItem();
+            pivotti.Header = "Uusi";
+            ListBox lbox = new ListBox();
+            lbox.ItemTemplate = (DataTemplate)this.Resources["DataTemplate1"];
+            lbox.ItemsSource = getResultList();
+            pivotti.Content = lbox;
+            pivotMainPivot.Items.Add(pivotti);
+ 
+        }
+
+       
+
     }
 
     // Tästä alkaa JSON parserin tarvitsemat luokat

@@ -17,20 +17,23 @@
     
     <!-- Kopioitu datatemplate-->
     <phone:PhoneApplicationPage.Resources>
-    <DataTemplate x:Key="DataTemplate1">
-            <Button Width="460" Height="160" Click="Button_Click" CommandParameter="{Binding viewItemURL[0]}" >
-                    <StackPanel Orientation="Horizontal" Height="155" Width="455" Background="Pink">
-                        <Image Source="{Binding galleryURL[0]}" Width="100" />
-                        <StackPanel Orientation="Vertical" Height="155" Background="Green" Width="355">
-                            <TextBlock Text="{Binding title[0]}" Width="350" Height="70" TextWrapping="Wrap" d:LayoutOverrides="Height" Foreground="WhiteSmoke"/>
-                            <StackPanel Orientation="Horizontal" Height="40" Width="350" Background="DarkKhaki">
-                                <TextBlock Text="{Binding sellingStatus[0].currentPrice[0].__value__}" Height="40" Width="70" />
-                                <TextBlock Text="{Binding sellingStatus[0].currentPrice[0].currencyId}" Height="40" />
+        <DataTemplate x:Key="DataTemplate1">
+                <Button Width="460" Height="160" Click="Button_Click" CommandParameter="{Binding viewItemURL[0]}" >
+                        <StackPanel Orientation="Horizontal" Height="155" Width="455" Background="Pink">
+                            <Image Source="{Binding galleryURL[0]}" Width="100" />
+                            <StackPanel Orientation="Vertical" Height="155" Background="Green" Width="355">
+                                <TextBlock Text="{Binding title[0]}" Width="350" Height="70" TextWrapping="Wrap" d:LayoutOverrides="Height" Foreground="WhiteSmoke"/>
+                                <StackPanel Orientation="Horizontal" Height="40" Width="350" Background="DarkKhaki">
+                                    <TextBlock Text="{Binding sellingStatus[0].currentPrice[0].__value__}" Height="40" Width="70" />
+                                    <TextBlock Text="{Binding sellingStatus[0].currentPrice[0].currencyId}" Height="40" />
+                                </StackPanel>
                             </StackPanel>
                         </StackPanel>
-                    </StackPanel>
-        </Button>
-    </DataTemplate>
+            </Button>
+        </DataTemplate>
+        <DataTemplate x:Key="DataTemplatePivotItem">
+            <ListBox x:Name="lboxResult" Margin="0,0,0,0" ItemTemplate="{StaticResource DataTemplate1}"/>
+        </DataTemplate>
     </phone:PhoneApplicationPage.Resources>
 
 	<phone:PhoneApplicationPage.FontFamily>
@@ -46,7 +49,7 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <!--Pivot Control-->
-        <controls:Pivot Title="MY APPLICATION">
+        <controls:Pivot x:Name="pivotMainPivot" Title="MY APPLICATION">
             <!--Pivot item one-->
             <controls:PivotItem Header="Search">
             	<Grid Margin="0,0,5,17" ShowGridLines="True" Background="#FF1F1F1F">
@@ -75,12 +78,13 @@
             		<TextBox x:Name="txtBoxResults" Grid.Column="2" Margin="0,41,19,0" Grid.Row="3" TextWrapping="Wrap" Text="10" InputScope="Number"/>
             		<toolkit:ListPicker x:Name="listPickerStore" Margin="20,8,31,4" Grid.Row="2" Grid.ColumnSpan="3" Header="Stores" ItemCountThreshold="21"/>
             		<toolkit:ListPicker x:Name="listPIckerSort" Grid.ColumnSpan="3" Margin="20,8,31,8" Grid.Row="4" Header="Sort by:"/>
+            		<Button x:Name="addPivotButton" Margin="5,7,0,0" Grid.Row="6" Content="Add Pivot&#xd;&#xa;" Click="addPivotItem"/>
             	</Grid>
                 <!--Double line list with text wrapping-->
             </controls:PivotItem>
  
             <!--Pivot item two-->
-            <controls:PivotItem Header="Result">
+            <controls:PivotItem Header="Result" >
                 <ListBox x:Name="lboxResult" Margin="0,0,0,0" ItemTemplate="{StaticResource DataTemplate1}"/>
             </controls:PivotItem>
         </controls:Pivot>
