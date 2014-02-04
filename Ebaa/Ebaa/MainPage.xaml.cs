@@ -168,8 +168,9 @@ namespace Ebaa
             */
 
             Search search = new Search();
-            //(search.pivotItem_.Content as ListBox).ItemTemplate = (DataTemplate)this.Resources["DataTemplate1"];
+            (search.pivotItem_.Content as ListBox).ItemTemplate = (DataTemplate)this.Resources["DataTemplate1"];
             pivotMainPivot.Items.Add(search.pivotItem_);
+            search.DoSearch();
  
         }
 
