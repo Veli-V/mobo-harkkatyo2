@@ -12,12 +12,39 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.IO.IsolatedStorage;
 
 namespace Ebaa
 {
     public partial class App : Application
     {
         private static MainViewModel viewModel = null;
+        private IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
+
+        public static string defaultSearch = "Dark Elf";
+
+        public void SaveSettings()
+        {
+            if(!settings.Contains("defaultSearch")){
+                // Tallennetaan uusi kenttä, nimellä defaultSearch
+                settings.Add("defaultSearch", defaultSearch);
+            }
+            else {
+                // Päivitetään jo olemassa oleva kenttä
+                settings["defaultSearch"] = defaultSearch;
+            }
+            settings.Save();
+        }
+
+        public void LoadSettings() 
+        {
+            if (settings.Contains("defaultSearch"))
+            {
+                defaultSearch = (String)settings["defaultSearch"];
+            }
+ 
+        }
+
 
         /// <summary>
         /// A static ViewModel used by the views to bind against.
@@ -80,12 +107,14 @@ namespace Ebaa
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            LoadSettings();
         }
 
         // Code to execute when the application is activated (brought to foreground)
         // This code will not execute when the application is first launched
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
+            LoadSettings();
             // Ensure that application state is restored appropriately
             if (!App.ViewModel.IsDataLoaded)
             {
@@ -97,6 +126,7 @@ namespace Ebaa
         // This code will not execute when the application is closing
         private void Application_Deactivated(object sender, DeactivatedEventArgs e)
         {
+            SaveSettings();
         }
 
         // Code to execute when the application is closing (eg, user hit Back)
@@ -104,6 +134,7 @@ namespace Ebaa
         private void Application_Closing(object sender, ClosingEventArgs e)
         {
             // Ensure that required application state is persisted here.
+            SaveSettings();
         }
 
         // Code to execute if a navigation fails

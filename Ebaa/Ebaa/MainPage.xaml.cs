@@ -14,10 +14,12 @@ using Newtonsoft.Json;
 using System.Text.RegularExpressions;
 using Microsoft.Phone.Tasks;
 
+
 namespace Ebaa
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        List<Search> savedSearches = new List<Search>();
  
         // Constructor
         public MainPage()
@@ -33,6 +35,7 @@ namespace Ebaa
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
+            txtBoxQuery.Text = App.defaultSearch;
         }
 
         // Load data for the ViewModel Items
@@ -153,6 +156,7 @@ namespace Ebaa
 
         private void addPivotItem(object sender, System.Windows.RoutedEventArgs e)
         {
+            /*
         	// TODO: Add event handler implementation here.
             PivotItem pivotti = new PivotItem();
             pivotti.Header = "Uusi";
@@ -161,7 +165,18 @@ namespace Ebaa
             lbox.ItemsSource = getResultList();
             pivotti.Content = lbox;
             pivotMainPivot.Items.Add(pivotti);
+            */
+
+            Search search = new Search();
+            //(search.pivotItem_.Content as ListBox).ItemTemplate = (DataTemplate)this.Resources["DataTemplate1"];
+            pivotMainPivot.Items.Add(search.pivotItem_);
  
+        }
+
+        private void AppBarIconSettingsClicked(object sender, System.EventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+            NavigationService.Navigate(new Uri("/Settings.xaml", UriKind.Relative));
         }
 
        

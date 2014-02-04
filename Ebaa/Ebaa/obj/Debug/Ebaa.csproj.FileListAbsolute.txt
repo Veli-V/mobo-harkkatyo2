@@ -87,3 +87,8 @@ E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\obj\Debug\XapCacheFile.xml
 E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
 E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Microsoft.Phone.Controls.Toolkit.pdb
 E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Microsoft.Phone.Controls.Toolkit.xml
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\Microsoft.Phone.Controls.Toolkit.pdb
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\Microsoft.Phone.Controls.Toolkit.xml
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\obj\Debug\Settings.g.i.cs
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\icons\appbar.feature.settings.rest.png

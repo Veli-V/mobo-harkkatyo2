@@ -18,6 +18,12 @@ namespace Ebaa
         public Settings()
         {
             InitializeComponent();
+            TextBoxDefaultSearch.Text = App.defaultSearch;
+        }
+
+        private void save_clicked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            App.defaultSearch = TextBoxDefaultSearch.Text;
         }
     }
 }
