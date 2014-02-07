@@ -21,6 +21,7 @@ namespace Ebaa
         private static MainViewModel viewModel = null;
         private IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
 
+        public static List<Search> savedSearches = new List<Search>();
         public static string defaultSearch = "Dark Elf";
 
         public void SaveSettings()
@@ -33,6 +34,16 @@ namespace Ebaa
                 // Päivitetään jo olemassa oleva kenttä
                 settings["defaultSearch"] = defaultSearch;
             }
+            if (!settings.Contains("savedSearches"))
+            {
+                // Tallennetaan uusi kenttä, nimellä defaultSearch
+                settings.Add("savedSearches", savedSearches);
+            }
+            else
+            {
+                // Päivitetään jo olemassa oleva kenttä
+                settings["savedSearches"] = savedSearches;
+            }
             settings.Save();
         }
 
@@ -42,6 +53,11 @@ namespace Ebaa
             {
                 defaultSearch = (String)settings["defaultSearch"];
             }
+            if (settings.Contains("savedSearches"))
+            {
+                //savedSearches = (List<Search>)settings["savedSearches"];
+            }
+ 
  
         }
 
@@ -108,6 +124,7 @@ namespace Ebaa
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
             LoadSettings();
+
         }
 
         // Code to execute when the application is activated (brought to foreground)

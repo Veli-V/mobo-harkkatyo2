@@ -11,6 +11,7 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
+using System.Runtime.Serialization;
 
 namespace Ebaa
 {
@@ -53,13 +54,30 @@ namespace Ebaa
             pivotti.Header = query_;
             ListBox lbox = new ListBox();
             pivotti.Content = lbox;
-            //lbox.ItemTemplate = (DataTemplate)Ebaa.MainPage.Resources["DataTemplate1"];
             pivotItem_ = pivotti;
         }
 
         public void DoSearch()
         {
-            Uri url = new Uri("http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsAdvanced&SERVICE-VERSION=1.0.0&GLOBAL-ID=EBAY-GB&SECURITY-APPNAME=JanneVis-5492-4df9-8755-33362e9698f1&keywords=Dark+elf&paginationInput.entriesPerPage=10&sortOrder=StartTimeNewest&itemFilter(0).name=ListingType&itemFilter(0).value=FixedPrice&itemFilter(1).name=MinPrice&itemFilter(1).value=0.00&itemFilter(2).name=MaxPrice&itemFilter(2).value=25.00&affiliate.networkId=9&affiliate.trackingId=1234567890&affiliate.customId=456&RESPONSE-DATA-FORMAT=JSON");
+            // Luodaan kysely url
+            String urlString = "http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsAdvanced&SERVICE-VERSION=1.0.0";
+            urlString += "&GLOBAL-ID=" + store_;
+            urlString += "&SECURITY-APPNAME=JanneVis-5492-4df9-8755-33362e9698f1";
+            urlString += "&keywords=" + query_;
+            urlString += "&paginationInput.entriesPerPage=" + resultCount_;
+            urlString += "&sortOrder=StartTimeNewest";
+            urlString += "&itemFilter(0).name=ListingType";
+            urlString += "&itemFilter(0).value=FixedPrice";
+            urlString += "&itemFilter(1).name=MinPrice";
+            urlString += "&itemFilter(1).value=" + minPrice_;
+            urlString += "&itemFilter(2).name=MaxPrice";
+            urlString += "&itemFilter(2).value=" + maxPrice_;
+            urlString += "&affiliate.networkId=9";
+            urlString += "&affiliate.trackingId=1234567890";
+            urlString += "&affiliate.customId=456";
+            urlString += "&RESPONSE-DATA-FORMAT=JSON";
+
+            Uri url = new Uri(urlString);
 
             WebClient webClient = new WebClient();
 
@@ -84,8 +102,6 @@ namespace Ebaa
             // parsitaan JSON RootObjecteiksi
             RootObject dataa = (RootObject)JsonConvert.DeserializeObject<RootObject>(tmp);
 
-            //List<Item> itemList = new List<Item>();
-
             // koska JSON palauttaa listoja, niin käydään listojen kaikki alkiot läpi
             // näin monta sisäkkäistä, koska tulos ketjuttuu mukavasti.
             // item on se mitä me halutaan tarkemmin tutkia, eli yksittäinen myynnissä oleva
@@ -96,11 +112,22 @@ namespace Ebaa
                 {
                     foreach (Item item in searchResult.item)
                     {
-                        MessageBox.Show(item.itemId.ToString());
                         (pivotItem_.Content as ListBox).Items.Add(item);
                     }
                 }
             }
+        }
+
+        public override string ToString()
+        {
+            String tmp = "";
+            tmp += query_ + "#";
+            tmp += minPrice_ + "#";
+            tmp += maxPrice_ + "#";
+            tmp += resultCount_ + "#";
+            tmp += store_;
+
+            return tmp;
         }
 
 
