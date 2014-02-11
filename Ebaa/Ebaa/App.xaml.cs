@@ -55,8 +55,9 @@ namespace Ebaa
             }
             if (settings.Contains("savedSearches"))
             {
-                //savedSearches = (List<Search>)settings["savedSearches"];
+                savedSearches = (List<Search>)settings["savedSearches"];
             }
+            
  
  
         }
@@ -124,6 +125,7 @@ namespace Ebaa
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
             LoadSettings();
+            
 
         }
 

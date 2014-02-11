@@ -24,6 +24,7 @@ namespace Ebaa
         private void save_clicked(object sender, System.Windows.RoutedEventArgs e)
         {
             App.defaultSearch = TextBoxDefaultSearch.Text;
+            NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
     }
 }
