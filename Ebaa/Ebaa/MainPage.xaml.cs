@@ -33,10 +33,19 @@ namespace Ebaa
             InitializeComponent();
 
             List<String> stores = new List<string>();
-            stores.Add("US");
-            stores.Add("UK");
-            stores.Add("DE");
+            stores.Add("USA");
+            stores.Add("United Kingdom");
+            stores.Add("Germany");
+            stores.Add("Hong Kong");
             listPickerStore.ItemsSource = stores;
+            List<String> sorts = new List<String>();
+            sorts.Add("Best match");
+            sorts.Add("Newest");
+            sorts.Add("End time soon");
+            sorts.Add("Price highest");
+            sorts.Add("Price lowest");
+            listPIckerSort.ItemsSource = sorts;
+
 
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
@@ -44,6 +53,35 @@ namespace Ebaa
             txtBoxQuery.Text = App.defaultSearch;
             doSavedSearches();
 
+        }
+
+        public static string returnSort(string s)
+        {
+            if ( s == "Best match")
+                return "BestMatch";
+            if ( s == "End time soon")
+                return "EndTimeSoonest";
+            if ( s == "Newest")
+                return "StartTimeNewest";
+            if ( s == "Price highest")
+                return "PricePlusShippingHighest";
+            if ( s == "Price lowest")
+                return "PricePlusShippingLowest";
+            return "BestMatch";
+
+        }
+
+        public static string returnStore(String s){
+            if (s == "USA")
+                return "EBAY-US";
+            if (s == "United Kingdom")
+                return "EBAY-GB";
+            if (s == "Germany")
+                return "EBAY-DE";
+            if (s == "Honk Kong")
+                return "EBAY-HK";
+            else
+                return "EBAY-GB";
         }
 
         protected virtual void OnNavigatedTo()
@@ -101,8 +139,18 @@ namespace Ebaa
             // esine.
             foreach (FindItemsAdvancedResponse res in dataa.findItemsAdvancedResponse)
             {
+                if (res.searchResult == null)
+                {
+                    MessageBox.Show("ei löytynyt");
+                    break;
+                }
                 foreach (SearchResult searchResult in res.searchResult)
                 {
+                    if (searchResult.item == null)
+                    {
+                        MessageBox.Show("ei löytynyt");
+                        break;
+                    }
                     foreach (Item item in searchResult.item)
                     {
                         lboxResult.Items.Add(item);
@@ -113,10 +161,12 @@ namespace Ebaa
 
         private string returnUrl()
         {
-            String urlString = "http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsAdvanced&SERVICE-VERSION=1.0.0&GLOBAL-ID=EBAY-GB&SECURITY-APPNAME=JanneVis-5492-4df9-8755-33362e9698f1";
+            String urlString = "http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsAdvanced&SERVICE-VERSION=1.0.0";
+            urlString += "&GLOBAL-ID=" + returnStore(listPickerStore.SelectedItem.ToString());
+            urlString += "&SECURITY-APPNAME=JanneVis-5492-4df9-8755-33362e9698f1";
             urlString += "&keywords=" + txtBoxQuery.Text;
             urlString += "&paginationInput.entriesPerPage=" + txtBoxResults.Text;
-            urlString += "&sortOrder=StartTimeNewest";
+            urlString += "&sortOrder=" + returnSort(listPIckerSort.SelectedItem.ToString());
             urlString += "&itemFilter(0).name=ListingType";
             urlString += "&itemFilter(0).value=FixedPrice";
             urlString += "&itemFilter(1).name=MinPrice";
@@ -144,18 +194,50 @@ namespace Ebaa
 
         private void addPivotItem(object sender, System.Windows.RoutedEventArgs e)
         {
-
-            Search search = new Search();
-            App.savedSearches.Add(search);
-            doSearch(search);
-
- 
+            String q = txtBoxQuery.Text;
+            String mip = txtBoxMinPrice.Text;
+            String map = txtBoxMaxPrice.Text;
+            String rc = txtBoxResults.Text;
+            String s = returnStore(listPickerStore.SelectedItem.ToString());
+            String st = returnSort(listPIckerSort.SelectedItem.ToString());
+            
+            TextBox txtBox = new TextBox();
+            txtBox.Text = q;
+            CustomMessageBox mb = new CustomMessageBox()
+            {
+                Caption = "You're saving a search",
+                Message = "Enter name for Search",
+                LeftButtonContent = "Save",
+                RightButtonContent = "Cancel",
+                Content = txtBox
+            };
+            mb.Dismissed += (ss, boxEventArgs) =>
+                {
+                    switch (boxEventArgs.Result)
+                    {
+                        case CustomMessageBoxResult.LeftButton:
+                            string n = txtBox.Text;
+                            Search search = new Search(q, mip, map, rc, s, n, st);
+                            App.savedSearches.Add(search);
+                            doSearch(search);
+                            break;
+                        case CustomMessageBoxResult.RightButton:
+                            // Do something.
+                            break;
+                        case CustomMessageBoxResult.None:
+                            // Do something.
+                            break;
+                        default:
+                            break;
+                    }
+                };
+            mb.Show();
         }
 
         private void doSearch(Search sh)
         {
             String urlString = sh.createUrl();
-             Uri url = new Uri(urlString);
+            Uri url = new Uri(urlString);
 
             WebClient webClient = new WebClient();
 
@@ -170,7 +252,7 @@ namespace Ebaa
             //private void webClient_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e,ListBox listBox)
             PivotItem pivotti = new PivotItem();
             pivotti.Content = lb;
-            pivotti.Header = "uusi haku";
+            pivotti.Header = sh.name_;
             pivotMainPivot.Items.Add(pivotti);
 
 
@@ -196,8 +278,18 @@ namespace Ebaa
             // esine.
             foreach (FindItemsAdvancedResponse res in dataa.findItemsAdvancedResponse)
             {
+                if (res.searchResult == null)
+                {
+                    MessageBox.Show("ei löytynyt");
+                    break;
+                }
                 foreach (SearchResult searchResult in res.searchResult)
                 {
+                    if (searchResult.item == null)
+                    {
+                        MessageBox.Show("ei löytynyt");
+                        break;
+                    }
                     foreach (Item item in searchResult.item)
                     {
                         lb.Items.Add(item);

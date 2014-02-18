@@ -81,8 +81,8 @@
             		<TextBox x:Name="txtBoxMaxPrice" Grid.Column="1" Margin="0,41,0,0" Grid.Row="3" TextWrapping="Wrap" Text="25" InputScope="Number"/>
             		<TextBlock Grid.Column="2" Height="37" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Results"/><LineBreak/><Run/></TextBlock>
             		<TextBox x:Name="txtBoxResults" Grid.Column="2" Margin="0,41,19,0" Grid.Row="3" TextWrapping="Wrap" Text="10" InputScope="Number"/>
-            		<toolkit:ListPicker x:Name="listPickerStore" Margin="20,8,31,4" Grid.Row="2" Grid.ColumnSpan="3" Header="Stores" ItemCountThreshold="1"/>
-            		<toolkit:ListPicker x:Name="listPIckerSort" Grid.ColumnSpan="3" Margin="20,8,31,8" Grid.Row="4" Header="Sort by:"/>
+            		<toolkit:ListPicker x:Name="listPickerStore" Margin="20,8,31,4" Grid.Row="2" Grid.ColumnSpan="3" Header="Stores" ExpansionMode="FullScreenOnly"/>
+                    <toolkit:ListPicker x:Name="listPIckerSort" Grid.ColumnSpan="3" Margin="20,8,31,8" Grid.Row="4" Header="Sort by:" ExpansionMode="FullScreenOnly"/>
             		<Button x:Name="addPivotButton" Margin="5,7,0,0" Grid.Row="6" Content="Add Pivot&#xd;&#xa;" Click="addPivotItem"/>
             	</Grid>
                 <!--Double line list with text wrapping-->

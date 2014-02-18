@@ -22,7 +22,7 @@ namespace Ebaa
         private IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
 
         public static List<Search> savedSearches = new List<Search>();
-        public static string defaultSearch = "Dark Elf";
+        public static string defaultSearch = String.Empty;
 
         public void SaveSettings()
         {

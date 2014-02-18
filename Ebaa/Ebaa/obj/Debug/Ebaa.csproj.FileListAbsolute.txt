@@ -87,8 +87,6 @@ E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\obj\Debug\XapCacheFile.xml
 E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
 E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Microsoft.Phone.Controls.Toolkit.pdb
 E:\Git\mobo-harkkatyo2\Ebaa\Ebaa\Bin\Debug\Microsoft.Phone.Controls.Toolkit.xml
-C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\Microsoft.Phone.Controls.Toolkit.pdb
-C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\Microsoft.Phone.Controls.Toolkit.xml
 C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
 C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\obj\Debug\Settings.g.i.cs
 C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\icons\appbar.feature.settings.rest.png
@@ -183,3 +181,25 @@ C:\Users\e3jvaisa\Desktop\Ebaa\Ebaa\obj\Debug\Ebaa.g.resources
 C:\Users\e3jvaisa\Desktop\Ebaa\Ebaa\obj\Debug\Ebaa.dll
 C:\Users\e3jvaisa\Desktop\Ebaa\Ebaa\obj\Debug\Ebaa.pdb
 C:\Users\e3jvaisa\Desktop\Ebaa\Ebaa\obj\Debug\XapCacheFile.xml
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\cs-CZ\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\da-DK\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\de-DE\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\el-GR\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\en-GB\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\es-ES\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\fi-FI\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\fr-FR\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\hu-HU\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\id-ID\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\it-IT\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\ja-JP\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\ko-KR\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\ms-MY\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\nb-NO\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\nl-NL\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\pl-PL\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\pt-BR\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\ru-RU\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\sv-SE\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\zh-CN\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\zh-TW\Microsoft.Phone.Controls.Toolkit.resources.dll

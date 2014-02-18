@@ -22,6 +22,8 @@ namespace Ebaa
         public string maxPrice_;
         public string resultCount_;
         public string store_;
+        public string name_;
+        public string sort_;
 
         public Search()
         {
@@ -30,6 +32,8 @@ namespace Ebaa
             maxPrice_ = "15";
             resultCount_ = "20";
             store_ = "EBAY-GB";
+            name_ = "Default Search";
+            sort_ = "BestMatch";
 
         }
 
@@ -38,14 +42,17 @@ namespace Ebaa
             String mip,
             String map,
             String rc,
-            String s)
+            String s,
+            String n,
+            String st)
         {
             query_ = q;
             minPrice_ = mip;
             maxPrice_ = map;
             resultCount_ = rc;
-            store_ = s;
-
+            store_ = MainPage.returnStore(s);
+            name_ = n;
+            sort_ = MainPage.returnSort(st);
         }
 
 
@@ -57,7 +64,7 @@ namespace Ebaa
             urlString += "&SECURITY-APPNAME=JanneVis-5492-4df9-8755-33362e9698f1";
             urlString += "&keywords=" + query_;
             urlString += "&paginationInput.entriesPerPage=" + resultCount_;
-            urlString += "&sortOrder=StartTimeNewest";
+            urlString += "&sortOrder=" + sort_;
             urlString += "&itemFilter(0).name=ListingType";
             urlString += "&itemFilter(0).value=FixedPrice";
             urlString += "&itemFilter(1).name=MinPrice";
