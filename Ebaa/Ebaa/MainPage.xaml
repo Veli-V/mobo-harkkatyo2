@@ -38,6 +38,7 @@
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>
 			<shell:ApplicationBarIconButton x:Name="AppBarIconSettings" IconUri="/icons/appbar.feature.settings.rest.png" Text="Settings" Click="AppBarIconSettingsClicked"/>
+			<shell:ApplicationBarIconButton x:Name="AppBarIconSavedSearches" IconUri="/icons/appbar.questionmark.rest.png" Text="button" Click="AppBarIconSavedSearchesClicked"/>
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
 

@@ -22,7 +22,7 @@ namespace Ebaa
         public string maxPrice_;
         public string resultCount_;
         public string store_;
-        public string name_;
+        public string namez;
         public string sort_;
 
         public Search()
@@ -32,7 +32,7 @@ namespace Ebaa
             maxPrice_ = "15";
             resultCount_ = "20";
             store_ = "EBAY-GB";
-            name_ = "Default Search";
+            namez = "Default Search";
             sort_ = "BestMatch";
 
         }
@@ -51,7 +51,7 @@ namespace Ebaa
             maxPrice_ = map;
             resultCount_ = rc;
             store_ = MainPage.returnStore(s);
-            name_ = n;
+            namez = n;
             sort_ = MainPage.returnSort(st);
         }
 

@@ -19,11 +19,13 @@ namespace Ebaa
         {
             InitializeComponent();
             TextBoxDefaultSearch.Text = App.defaultSearch;
+            ToggleSwitchDebug.IsChecked = App.debug;
         }
 
         private void save_clicked(object sender, System.Windows.RoutedEventArgs e)
         {
             App.defaultSearch = TextBoxDefaultSearch.Text;
+            App.debug = (bool)ToggleSwitchDebug.IsChecked;
             NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
     }

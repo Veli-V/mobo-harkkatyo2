@@ -185,7 +185,10 @@ namespace Ebaa
         {
             Button tmpButton = (Button)sender;
             string url = tmpButton.CommandParameter.ToString();
-            //MessageBox.Show(url);
+            if (App.debug)
+            {
+                MessageBox.Show(url);
+            }
             WebBrowserTask webBrowserTask = new WebBrowserTask();
             webBrowserTask.Uri = new Uri(url, UriKind.Absolute);
             webBrowserTask.Show();
@@ -244,7 +247,10 @@ namespace Ebaa
             ListBox lb = new ListBox();
             lb.ItemTemplate = (DataTemplate)this.Resources["DataTemplate1"];
 
-            MessageBox.Show(urlString);
+            if (App.debug)
+            {
+                MessageBox.Show(urlString);
+            }
             webClient.DownloadStringAsync(url);
             webClient.DownloadStringCompleted+=new DownloadStringCompletedEventHandler((sender, e) => this.webClient_DownloadStringCompleted_2(sender, e, lb));
 
@@ -252,7 +258,7 @@ namespace Ebaa
             //private void webClient_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e,ListBox listBox)
             PivotItem pivotti = new PivotItem();
             pivotti.Content = lb;
-            pivotti.Header = sh.name_;
+            pivotti.Header = sh.namez;
             pivotMainPivot.Items.Add(pivotti);
 
 
@@ -300,11 +306,12 @@ namespace Ebaa
 
         private void AppBarIconSettingsClicked(object sender, System.EventArgs e)
         {
-        	// TODO: Add event handler implementation here.
             NavigationService.Navigate(new Uri("/Settings.xaml", UriKind.Relative));
         }
 
-       
-
+        private void AppBarIconSavedSearchesClicked(object sender, System.EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/SavedSearches.xaml", UriKind.Relative));
+        }
     }
 }

@@ -1,8 +1,8 @@
-﻿<xapCache source="C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\Ebaa.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="18.2.2014 13:59:14">
+﻿<xapCache source="C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\Ebaa.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="20.2.2014 13:44:15">
   <file source="C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="4.2.2014 11:46:50" />
   <file source="C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Background.png" archivePath="Background.png" lastWriteTime="4.2.2014 11:39:27" />
   <file source="C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="4.2.2014 11:39:27" />
-  <file source="C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\obj\Debug\Ebaa.dll" archivePath="Ebaa.dll" lastWriteTime="18.2.2014 13:59:13" />
+  <file source="C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\obj\Debug\Ebaa.dll" archivePath="Ebaa.dll" lastWriteTime="20.2.2014 13:44:15" />
   <file source="c:\Program Files (x86)\Microsoft SDKs\Advertising for Phone\Libraries\Microsoft.Advertising.Mobile.dll" archivePath="Microsoft.Advertising.Mobile.dll" lastWriteTime="19.8.2011 11:13:14" />
   <file source="c:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Windows Phone\v7.1\Libraries\Microsoft.Expression.Controls.dll" archivePath="Microsoft.Expression.Controls.dll" lastWriteTime="17.8.2011 1:48:22" />
   <file source="c:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Windows Phone\v7.1\Libraries\Microsoft.Expression.Drawing.dll" archivePath="Microsoft.Expression.Drawing.dll" lastWriteTime="17.8.2011 1:48:22" />
@@ -10,10 +10,12 @@
   <file source="C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\packages\WPtoolkit.4.2013.08.16\lib\sl4-windowsphone71\Microsoft.Phone.Controls.Toolkit.dll" archivePath="Microsoft.Phone.Controls.Toolkit.dll" lastWriteTime="18.2.2014 12:46:09" />
   <file source="C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\packages\Newtonsoft.Json.5.0.8\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll" archivePath="Newtonsoft.Json.dll" lastWriteTime="4.2.2014 11:39:43" />
   <file source="C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\icons\appbar.feature.settings.rest.png" archivePath="icons\appbar.feature.settings.rest.png" lastWriteTime="15.9.2011 15:33:14" />
+  <file source="C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\icons\appbar.questionmark.rest.png" archivePath="icons\appbar.questionmark.rest.png" lastWriteTime="15.9.2011 15:33:14" />
   <file source="C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\README_FIRST.txt" archivePath="README_FIRST.txt" lastWriteTime="18.2.2014 12:46:10" />
   <file source="C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="4.2.2014 11:39:27" />
   <file source="C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="18.2.2014 13:16:23" />
   <file source="C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="4.2.2014 11:39:27" />
   <file source="C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\Background.png" archivePath="Background.png" lastWriteTime="4.2.2014 11:39:27" />
   <file source="C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\icons\appbar.feature.settings.rest.png" archivePath="icons\appbar.feature.settings.rest.png" lastWriteTime="15.9.2011 15:33:14" />
+  <file source="C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\icons\appbar.questionmark.rest.png" archivePath="icons\appbar.questionmark.rest.png" lastWriteTime="15.9.2011 15:33:14" />
 </xapCache>

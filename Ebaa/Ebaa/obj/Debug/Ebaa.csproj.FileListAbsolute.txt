@@ -203,3 +203,5 @@ C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\ru-R
 C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\sv-SE\Microsoft.Phone.Controls.Toolkit.resources.dll
 C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\zh-CN\Microsoft.Phone.Controls.Toolkit.resources.dll
 C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\zh-TW\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\obj\Debug\SavedSearches.g.i.cs
+C:\Users\e3jvaisa\Documents\Visual Studio 2010\Projects\Ebaa\Ebaa\Bin\Debug\icons\appbar.questionmark.rest.png

@@ -23,6 +23,7 @@ namespace Ebaa
 
         public static List<Search> savedSearches = new List<Search>();
         public static string defaultSearch = String.Empty;
+        public static bool debug;
 
         public void SaveSettings()
         {
@@ -44,6 +45,29 @@ namespace Ebaa
                 // Päivitetään jo olemassa oleva kenttä
                 settings["savedSearches"] = savedSearches;
             }
+            if (settings.Contains("debug"))
+            {
+                if (debug)
+                {
+                    settings["debug"] = "y";
+                }
+                else
+                {
+                    settings["debug"] = "n";
+                }
+            }
+            else
+            {
+                
+                if (debug)
+                {
+                    settings.Add("debug", "y");
+                }
+                else
+                {
+                    settings.Add("debug", "n");
+                }
+            }
             settings.Save();
         }
 
@@ -56,6 +80,14 @@ namespace Ebaa
             if (settings.Contains("savedSearches"))
             {
                 savedSearches = (List<Search>)settings["savedSearches"];
+            }
+            if (settings.Contains("debug"))
+            {
+                if((String)settings["debug"] == "y"){
+                    debug = true;
+                } else {
+                    debug = false;
+                }
             }
             
  
