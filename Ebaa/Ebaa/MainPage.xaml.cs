@@ -19,19 +19,22 @@ namespace Ebaa
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        // Funktio joka tekee tallennutut haut. Käytänössä
+        // siis vain kutsuu jokaiselle haulle haun tekevää
+        // funktiota
         public void doSavedSearches(){
             foreach (Search sh in App.savedSearches){
                 doSearch(sh);
             }
         }
-
-
  
         // Constructor
         public MainPage()
         {
             InitializeComponent();
 
+            // täytetään kaupat ja järjestys perusteet listat.
+            // ei kaikkein hienoin ratkaisu, mutta toimiva.
             List<String> stores = new List<string>();
             stores.Add("USA");
             stores.Add("United Kingdom");
@@ -55,6 +58,7 @@ namespace Ebaa
 
         }
 
+        // Palauttaa järjestely perusteen string:inä
         public static string returnSort(string s)
         {
             if ( s == "Best match")
@@ -71,6 +75,8 @@ namespace Ebaa
 
         }
 
+        // tekee saman kuin ylempi mutta kauapalle,
+        // eli palauttaa valitun kaupan string:inä
         public static string returnStore(String s){
             if (s == "USA")
                 return "EBAY-US";
@@ -84,6 +90,8 @@ namespace Ebaa
                 return "EBAY-GB";
         }
 
+        // kun tälle sivulle navigoidaan tehdään tallennetut haut uusiksi,
+        // jostain syystä ei tapahdu kun sivulle tullaan back painikkeella.
         protected virtual void OnNavigatedTo()
         {
             doSavedSearches();
@@ -98,26 +106,27 @@ namespace Ebaa
             }
         }
 
+        // Kun haku painiketta painetaan, tehdään haku
+        // annetuilla hakuehdoilla.
         private void btnSearchClicked(object sender, System.Windows.RoutedEventArgs e)
         {
-            // GET call = http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsAdvanced&SERVICE-VERSION=1.0.0&GLOBAL-ID=EBAY-GB&SECURITY-APPNAME=JanneVis-5492-4df9-8755-33362e9698f1&keywords=Dark+elf&paginationInput.entriesPerPage=10&sortOrder=StartTimeNewest&itemFilter(0).name=ListingType&itemFilter(0).value=FixedPrice&itemFilter(1).name=MinPrice&itemFilter(1).value=0.00&itemFilter(2).name=MaxPrice&itemFilter(2).value=25.00&affiliate.networkId=9&affiliate.trackingId=1234567890&affiliate.customId=456&RESPONSE-DATA-FORMAT=XML 
 
-
-
+            // haetaan urli stringinä
             String urlString = returnUrl();
-
             Uri url = new Uri(urlString);
 
+            // luodaan webclient
             WebClient webClient = new WebClient();
 
+            // ladataan json ja luodaan käsittelijä lataukselle
             webClient.DownloadStringAsync(url);
             webClient.DownloadStringCompleted +=new DownloadStringCompletedEventHandler(webClient_DownloadStringCompleted);
 
         }
 
+        // käsitellään ladattu tieto, eli jsoni
         void webClient_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
-            //throw new NotImplementedException();
             lboxResult.Items.Clear();
 
             // Siivotaan json vastauksesta @ merkit pois. Ebayn api on nimettyn jotkin
@@ -130,8 +139,6 @@ namespace Ebaa
             
             // parsitaan JSON RootObjecteiksi
             RootObject dataa = (RootObject)JsonConvert.DeserializeObject<RootObject>(tmp);
-
-            //List<Item> itemList = new List<Item>();
 
             // koska JSON palauttaa listoja, niin käydään listojen kaikki alkiot läpi
             // näin monta sisäkkäistä, koska tulos ketjuttuu mukavasti.
@@ -159,6 +166,8 @@ namespace Ebaa
             }
         }
 
+        // Luo stringin joka sisältää haku urlin.
+        // luo sen syötettyjen kenttien pohjalta.
         private string returnUrl()
         {
             String urlString = "http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsAdvanced&SERVICE-VERSION=1.0.0";
@@ -181,6 +190,9 @@ namespace Ebaa
             return urlString;
         }
 
+        // tällä funktiolla avataan hakutuloksen tarkemmat tiedot
+        // puhelimen omaan selaimeen. Eli käytännössä avaa
+        // hakutuloksen ebay sivun.
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button tmpButton = (Button)sender;
@@ -195,6 +207,7 @@ namespace Ebaa
         }
 
 
+        // Lisää uuden pivot itemin tallennettua hakua varten.
         private void addPivotItem(object sender, System.Windows.RoutedEventArgs e)
         {
             String q = txtBoxQuery.Text;
@@ -204,6 +217,9 @@ namespace Ebaa
             String s = returnStore(listPickerStore.SelectedItem.ToString());
             String st = returnSort(listPIckerSort.SelectedItem.ToString());
             
+            // Tässä luodaan varmistus dialogi että halautko
+            // varmasti tallentaa haun.
+            // Samlla haku on mahdollista nimetä vapaassti
             TextBox txtBox = new TextBox();
             txtBox.Text = q;
             CustomMessageBox mb = new CustomMessageBox()
@@ -237,6 +253,7 @@ namespace Ebaa
             mb.Show();
         }
 
+        // Suoritetaan haku.
         private void doSearch(Search sh)
         {
             String urlString = sh.createUrl();
@@ -254,16 +271,15 @@ namespace Ebaa
             webClient.DownloadStringAsync(url);
             webClient.DownloadStringCompleted+=new DownloadStringCompletedEventHandler((sender, e) => this.webClient_DownloadStringCompleted_2(sender, e, lb));
 
-            //webClient.DownloadStringCompleted += new DownloadStringCompletedEventHandler((sender, e) => this.webClient_DownloadStringCompleted(sender, e, localItem.MyListBox));
-            //private void webClient_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e,ListBox listBox)
             PivotItem pivotti = new PivotItem();
             pivotti.Content = lb;
-            pivotti.Header = sh.namez;
+            pivotti.Header = sh.name_;
             pivotMainPivot.Items.Add(pivotti);
 
 
         }
 
+        // dosearchin latauksen käsittelijä
         void webClient_DownloadStringCompleted_2(object sender, DownloadStringCompletedEventArgs e, ListBox lb)
         {
 
@@ -304,6 +320,8 @@ namespace Ebaa
             }
         }
 
+        // Käsittelijät appbarin napeille. Eli käytännössä vain vaihtaa
+        // aktiivista sivua.
         private void AppBarIconSettingsClicked(object sender, System.EventArgs e)
         {
             NavigationService.Navigate(new Uri("/Settings.xaml", UriKind.Relative));

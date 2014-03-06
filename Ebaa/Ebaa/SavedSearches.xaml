@@ -15,11 +15,12 @@
 
     <phone:PhoneApplicationPage.Resources>
         <DataTemplate x:Key="DataTemplate1">
-            <Button Width="460" Height="160" Click="Button_Click" >
-                <StackPanel Orientation="Horizontal" Height="155" Width="455" Background="Pink">
-                    <TextBlock Text="Lollero" />
-                    <StackPanel Orientation="Vertical" Height="155" Background="Green" Width="355">
-                        <TextBlock Text="{Binding namez}" Width="350" Height="70" TextWrapping="Wrap" d:LayoutOverrides="Height" Foreground="WhiteSmoke"/>
+            <Button Width="460" Height="100" Click="Button_Click" Tag="{Binding id_}">
+                <StackPanel Orientation="Horizontal" Height="155" Width="455" Background="#000000">
+                    <TextBlock Text="Search " />
+                    <StackPanel Orientation="Vertical" Height="155" Background="#000000" Width="355">
+                        <TextBlock Text="Name:" />
+                        <TextBlock Text="{Binding name_}" Width="350" Height="70" TextWrapping="Wrap" d:LayoutOverrides="Height" Foreground="WhiteSmoke"/>
                     </StackPanel>
                 </StackPanel>
             </Button>
@@ -41,7 +42,8 @@
 
 		<!--ContentPanel - place additional content here-->
 		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <ListBox x:Name="ListBoxSavedSearches" Margin="0,0,0,0" ItemTemplate="{StaticResource DataTemplate1}"/>
+            <TextBlock Text="Click to remove" />
+            <ListBox x:Name="ListBoxSavedSearches" Margin="0,30,0,0" ItemTemplate="{StaticResource DataTemplate1}"/>
 		</Grid>
 	</Grid>
 </phone:PhoneApplicationPage>

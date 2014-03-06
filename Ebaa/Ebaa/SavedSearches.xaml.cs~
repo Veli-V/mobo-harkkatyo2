@@ -52,7 +52,6 @@ namespace Ebaa
             int position = (int)bt.Tag;
 
 
-            // Varmistus dialogi halutaanko varmasti poistaa. 
             CustomMessageBox mb = new CustomMessageBox()
             {
                 Caption = "Remove saved search",
@@ -85,10 +84,6 @@ namespace Ebaa
         }
     }
 
-    // apu luokka jolla tiedot näyteään.
-    // Nimi on suora kopio hauon nimestä,
-    // id taas haun sijainti listassa, tämän avulla
-    // poistaminen mahdollista.
     public class SearchItem
     {
         public string name_ { get; set; }

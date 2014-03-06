@@ -18,9 +18,6 @@ namespace Ebaa
 {
     public partial class App : Application
     {
-        // Muutujat joita käytetään apuna tietojen tallennukseen
-        // nämä ovat myös käytettävissä joka puolella ohjelmaa
-        // joten tietoja ei tarvitse lähettää parametreina.
         private static MainViewModel viewModel = null;
         private IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
 
@@ -28,11 +25,6 @@ namespace Ebaa
         public static string defaultSearch = String.Empty;
         public static bool debug;
 
-
-        // Tallentaa asetukset.
-        // tarkistaa jokaisen asetuksenn kohdalla onko se jo tallennettu,
-        // jos on niin tallentaa vain päälle,
-        // jos ei ole niin tallentaa uuden tietueen ja siihen tiedon.
         public void SaveSettings()
         {
             if(!settings.Contains("defaultSearch")){
@@ -79,11 +71,6 @@ namespace Ebaa
             settings.Save();
         }
 
-        // Lataa asetukset jotka aikaisemmin tallennetut.
-        // Ensin tarkistaa onko tallennus tehty
-        // ja jos on tallentaa sen käytössä olevaan muutujaan.
-        // Muuten käyteään tiedoston alussa määritettyäjä
-        // oletus asetuksia.
         public void LoadSettings() 
         {
             if (settings.Contains("defaultSearch"))
@@ -107,8 +94,6 @@ namespace Ebaa
  
         }
 
-        // Tästä alaspäin on visual studion automaattisesti
-        // luomia funktioita.
 
         /// <summary>
         /// A static ViewModel used by the views to bind against.

@@ -19,11 +19,11 @@
     <phone:PhoneApplicationPage.Resources>
         <DataTemplate x:Key="DataTemplate1">
                 <Button Width="460" Height="160" Click="Button_Click" CommandParameter="{Binding viewItemURL[0]}" >
-                        <StackPanel Orientation="Horizontal" Height="155" Width="455" Background="Pink">
+                        <StackPanel Orientation="Horizontal" Height="155" Width="455" Background="#000000">
                             <Image Source="{Binding galleryURL[0]}" Width="100" />
-                            <StackPanel Orientation="Vertical" Height="155" Background="Green" Width="355">
+                    <StackPanel Orientation="Vertical" Height="155" Background="#000000" Width="355">
                                 <TextBlock Text="{Binding title[0]}" Width="350" Height="70" TextWrapping="Wrap" d:LayoutOverrides="Height" Foreground="WhiteSmoke"/>
-                                <StackPanel Orientation="Horizontal" Height="40" Width="350" Background="DarkKhaki">
+                        <StackPanel Orientation="Horizontal" Height="40" Width="350" Background="#000000">
                                     <TextBlock Text="{Binding sellingStatus[0].currentPrice[0].__value__}" Height="40" Width="70" />
                                     <TextBlock Text="{Binding sellingStatus[0].currentPrice[0].currencyId}" Height="40" />
                                 </StackPanel>
@@ -58,15 +58,14 @@
         <controls:Pivot x:Name="pivotMainPivot" Title="MY APPLICATION">
             <!--Pivot item one-->
             <controls:PivotItem Header="Search">
-            	<Grid Margin="0,0,5,17" ShowGridLines="True" Background="#FF1F1F1F">
+            	<Grid Margin="0,0,5,17" ShowGridLines="False" Background="#00000000">
             		<Grid.RowDefinitions>
-            			<RowDefinition Height="35"/>
+            			<RowDefinition Height="30"/>
             			<RowDefinition Height="0.168*"/>
-            			<RowDefinition Height="0.166*"/>
-            			<RowDefinition Height="0.218*"/>
-            			<RowDefinition Height="0.181*"/>
-            			<RowDefinition Height="0.102*"/>
-            			<RowDefinition Height="0.166*"/>
+            			<RowDefinition Height="0.185*"/>
+            			<RowDefinition Height="0.200*"/>
+            			<RowDefinition Height="0.185*"/>
+            			<RowDefinition Height="0.186*"/>
             		</Grid.RowDefinitions>
             		<Grid.ColumnDefinitions>
             			<ColumnDefinition/>
@@ -75,7 +74,7 @@
             		</Grid.ColumnDefinitions>
             		<TextBox x:Name="txtBoxQuery" Margin="8,0,19,0" TextWrapping="Wrap" Text="Dark Elf" Grid.ColumnSpan="3" Grid.Row="1"/>
             		<TextBlock TextWrapping="Wrap" RenderTransformOrigin="0.455,-0.852" HorizontalAlignment="Left" Margin="0,8,0,0" d:LayoutOverrides="Height" Text="Query:"/>
-            		<Button x:Name="btnSearch" Content="Search" Grid.Column="2" Grid.Row="6" Click="btnSearchClicked"/>
+            		<Button x:Name="btnSearch" Content="Search" Grid.Column="1" Grid.Row="5" Click="btnSearchClicked" Grid.ColumnSpan="2" Margin="100,0,0,0" Width="201" />
             		<TextBlock Height="37" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Min. pri"/><Run Text="ce"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
             		<TextBlock Grid.Column="1" Height="37" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Max. price"/><LineBreak/><Run/></TextBlock>
             		<TextBox x:Name="txtBoxMinPrice" Margin="8,41,0,0" Grid.Row="3" TextWrapping="Wrap" Text="0" InputScope="Number"/>
@@ -84,7 +83,7 @@
             		<TextBox x:Name="txtBoxResults" Grid.Column="2" Margin="0,41,19,0" Grid.Row="3" TextWrapping="Wrap" Text="10" InputScope="Number"/>
             		<toolkit:ListPicker x:Name="listPickerStore" Margin="20,8,31,4" Grid.Row="2" Grid.ColumnSpan="3" Header="Stores" ExpansionMode="FullScreenOnly"/>
                     <toolkit:ListPicker x:Name="listPIckerSort" Grid.ColumnSpan="3" Margin="20,8,31,8" Grid.Row="4" Header="Sort by:" ExpansionMode="FullScreenOnly"/>
-            		<Button x:Name="addPivotButton" Margin="5,7,0,0" Grid.Row="6" Content="Add Pivot&#xd;&#xa;" Click="addPivotItem"/>
+            		<Button x:Name="addPivotButton" Margin="5,7,102,0" Grid.Row="5" Content="Save Search" Click="addPivotItem" Grid.ColumnSpan="2" Width="194" />
             	</Grid>
                 <!--Double line list with text wrapping-->
             </controls:PivotItem>
