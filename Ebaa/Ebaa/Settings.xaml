@@ -25,7 +25,7 @@
 			<toolkit:ToggleSwitch x:Name="ToggleSwitchDebug"  Margin="0,8,203,0" IsChecked="{Binding app.debug}" VerticalAlignment="Top" d:LayoutOverrides="Width" Content="Debug"/>
 			<TextBox x:Name="TextBoxDefaultSearch" Margin="8,205,10,164" TextWrapping="Wrap" Text="Dark Elf" RenderTransformOrigin="0.514,0.896"/>
 			<TextBlock HorizontalAlignment="Left" Height="45" Margin="8,156,0,0" TextWrapping="Wrap" Text="Default Search" VerticalAlignment="Top" Width="171"/>
-			<Button x:Name="save" Content="Button" Height="88" Margin="88,0,86,27" VerticalAlignment="Bottom" Click="save_clicked"/>
+			<Button x:Name="save" Content="Save Settings" Height="88" Margin="88,0,86,27" VerticalAlignment="Bottom" Click="save_clicked"/>
 		</Grid>
 	</Grid>
 </phone:PhoneApplicationPage>
